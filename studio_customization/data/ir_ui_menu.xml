@@ -1,0 +1,408 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<odoo>
+  <record id="point_of_sale.menu_point_of_sale_customer" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="account.res_partner_action_customer"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Customers</field>
+    <field name="parent_id" ref="point_of_sale.menu_point_of_sale"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="point_of_sale.menu_point_ofsale" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="point_of_sale.action_pos_pos_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('point_of_sale.group_pos_manager'), ref('point_of_sale.group_pos_user')])]"/>
+    <field name="name">Orders</field>
+    <field name="parent_id" ref="point_of_sale.menu_point_of_sale"/>
+    <field name="sequence" eval="False"/>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="point_of_sale.menu_pos_payment" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="point_of_sale.action_pos_payment_form"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('point_of_sale.group_pos_manager'), ref('point_of_sale.group_pos_user')])]"/>
+    <field name="name">Payments</field>
+    <field name="parent_id" ref="point_of_sale.menu_point_of_sale"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="point_of_sale.menu_pos_session_all" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="point_of_sale.action_pos_session"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('point_of_sale.group_pos_manager')])]"/>
+    <field name="name">Sessions</field>
+    <field name="parent_id" ref="point_of_sale.menu_point_of_sale"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="sale_renting.menu_orders_customers" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="account.res_partner_action_customer"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Customers</field>
+    <field name="parent_id" ref="sale_renting.rental_order_menu"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="sale_renting.rental_orders_all" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="sale_renting.rental_order_action"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Orders</field>
+    <field name="parent_id" ref="sale_renting.rental_order_menu"/>
+    <field name="sequence" eval="False"/>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="sale_renting.rental_orders_today" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">To Do Today</field>
+    <field name="parent_id" ref="sale_renting.rental_order_menu"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.point_of_sale_custom_0bab6ea6-5cfa-467d-815d-d45319c9f3d0" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.customer_loyalty_poi_0a6d69a5-5640-4848-8cff-5ca49060f303"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Customer loyalty point</field>
+    <field name="parent_id" ref="point_of_sale.menu_point_of_sale"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.point_of_sale_custom_ba34ad6c-cbdf-466d-a652-318aa6442d1a" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.customer_loyalty_poi_dced9abc-4837-4124-92ff-b0ede8fdbcd4"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Customer loyalty point</field>
+    <field name="parent_id" ref="point_of_sale.menu_point_of_sale"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rental_project_361111f2-3615-4d42-9a62-0065a92144c7" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.project_ecbfc7e6-f194-4286-bb02-10b7c6326750"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('project.group_project_manager')])]"/>
+    <field name="name">project</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rental_project_d4e9b4d5-7939-47de-a1bf-3fd87131af84" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.project_e4670051-b116-4bcb-ab18-b07ed8e09e15"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Project</field>
+    <field name="parent_id" ref="sale_renting.rental_order_menu"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rental_project_f76f79c5-e212-4f69-b485-b73f9f9ff74e" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.project_c174a317-75f4-4dbe-85a0-057bca37c231"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Project</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence" eval="False"/>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">RESCUE APP</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_421a7e07-d042-467f-be29-ece5cbe2d6bf" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.country_state_aa28ada2-8e87-4379-a487-d0b8a13246df"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Country</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_6c1371cc-63db-4daf-b8a4-fc5019b518d2" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.country_e400c636-b523-49ba-8797-90a0bbcd52ee"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name" eval="False"/>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_animal_e85dc7bb-2e91-4cd5-bb91-5cef77bc353a" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.animal_b2ac170e-0896-43bf-b68c-5298db4c3f56"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Animal</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence" eval="False"/>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_animal_lo_8d1bb1e5-cca9-4508-b465-9fd4bb796fb3" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.animal_location_1a6e8142-e180-4102-a7be-693b1dcae9bc"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Animal Locations</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_animal_e85dc7bb-2e91-4cd5-bb91-5cef77bc353a"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_animals_d_e2490403-5bc6-4c47-ad3e-3c8f30b7ffd5" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.animals_details_452f4ee4-23aa-4363-96a9-89031489369a"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Animals Details</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_animal_e85dc7bb-2e91-4cd5-bb91-5cef77bc353a"/>
+    <field name="sequence" eval="False"/>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_configura_a3f4e41b-8c69-4025-834e-f7086215d1e5" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Configuration</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_configura_31790846-3a6d-4202-86d4-36bbce98ad8a" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.animal_tags_5ce5251d-426f-463c-89a7-ccc74764274f"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Animal Tags</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_configura_a3f4e41b-8c69-4025-834e-f7086215d1e5"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_configura_b8ea6296-cffd-429a-870d-3cb2d5ebaf80" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.animal_stages_2654894f-5618-4c85-9145-39bf4ae2f5ba"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Animal Stages</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_configura_a3f4e41b-8c69-4025-834e-f7086215d1e5"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_employees_a8706fe7-6082-418a-b1b7-775f954d3d5e" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.employees_c2bf2303-c1a3-470c-aa75-761ae505c06c"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [ref('hr.group_hr_manager')])]"/>
+    <field name="name">Employees</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_locations_d31a946c-9465-4d9c-bc8d-dbeec11466cb" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.locations_4c44fbe8-55d0-48cf-8d5a-12271a4b79a8"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Locations</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_animal_e85dc7bb-2e91-4cd5-bb91-5cef77bc353a"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_partners_9ff16f06-7912-417f-b938-5f5b5563e029" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.partners_44fc57f9-c1f5-4dfd-b2cf-d384d15d4348"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Partners</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_sponser_9bbf8e6f-cf74-49e3-aedb-cd501fe8bf48" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.sponser_345ff24d-6a65-42bd-ac0a-26bc8ec13b0f"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">sponser</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_test_38bd4202-56db-4778-89a2-fdd3d189a746" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.test_69489d95-4715-4f04-8bbc-a61060e7ebed"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">test</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">6</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.rescue_app_visitor_0a94b089-bc2b-4894-bafd-228f5dafaa86" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.visitor_eb251d20-8996-489d-9bc7-c302b94848c1"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">visitor</field>
+    <field name="parent_id" ref="studio_customization.rescue_app_d4c9036e-2e5b-4d9a-bc88-81e452c8fbce"/>
+    <field name="sequence">5</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.secure_places_5725268c-4953-4c62-a13f-d1db64d05ed0" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Secure Places</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-institution,#f1c40f,#58a177</field>
+  </record>
+  <record id="studio_customization.secure_places_7bf78908-2951-479a-bb9c-706d1ebdb6a1" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.contact_6a0cbb46-dd87-4562-b8dc-6e7e00bccc54"/>
+    <field name="active" eval="False"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name" eval="False"/>
+    <field name="parent_id" ref="studio_customization.secure_places_5725268c-4953-4c62-a13f-d1db64d05ed0"/>
+    <field name="sequence">13</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.secure_places_7fc8471b-a9a9-4cff-aeb9-1682f0f9f4d8" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.contact_d17669cd-4ccf-4db1-a724-4ce541fa786b"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Contact</field>
+    <field name="parent_id" ref="studio_customization.secure_places_5725268c-4953-4c62-a13f-d1db64d05ed0"/>
+    <field name="sequence">12</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.secure_places_places_9fa4ff69-4f1d-4964-9094-35ecf41eac7b" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.places_03dd1248-058b-4afe-bb45-3131e17a2e70"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Secure Places</field>
+    <field name="parent_id" ref="studio_customization.secure_places_5725268c-4953-4c62-a13f-d1db64d05ed0"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.secure_places_reserv_fca44644-6391-4bcd-8939-887c6127db76" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.reservation_203a2d8f-908d-4343-bbea-2adf51417f64"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Reservation</field>
+    <field name="parent_id" ref="studio_customization.secure_places_5725268c-4953-4c62-a13f-d1db64d05ed0"/>
+    <field name="sequence">11</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_3781dfb6-55c5-4317-8a7c-019a2531d1f9" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Sky</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-television,#f1c40f,#34495e</field>
+  </record>
+  <record id="studio_customization.sky_billboard_ce1b222a-14db-4904-ad4e-a4096cb33758" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.billboard_76035450-f268-454b-86d2-1f30ef2dbda2"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Billboard</field>
+    <field name="parent_id" ref="studio_customization.sky_3781dfb6-55c5-4317-8a7c-019a2531d1f9"/>
+    <field name="sequence">2</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_billboards_bb31fe74-ab5d-498b-b0b9-9f869c79e310" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.billboards_47d219d4-6e8d-46b1-b210-8ab344f4a622"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Projects</field>
+    <field name="parent_id" ref="studio_customization.sky_3781dfb6-55c5-4317-8a7c-019a2531d1f9"/>
+    <field name="sequence" eval="False"/>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_configuration_9a8cde31-7054-4edd-83ce-e4ca96aa25e5" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Configuration</field>
+    <field name="parent_id" ref="studio_customization.sky_3781dfb6-55c5-4317-8a7c-019a2531d1f9"/>
+    <field name="sequence">4</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_configuration_bi_e42d0086-be4f-4c91-afe2-2ff6bed0e602" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.billboards_stages_3f34f9dd-b740-4d04-9c06-e2e33cfc18ed"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Projects Stages</field>
+    <field name="parent_id" ref="studio_customization.sky_configuration_9a8cde31-7054-4edd-83ce-e4ca96aa25e5"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_configuration_bi_f6707ac5-a441-4c15-bada-7114c963ce55" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.billboards_tags_226e0004-690b-4ad8-87ea-2cc442ce71e4"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Projects Tags</field>
+    <field name="parent_id" ref="studio_customization.sky_configuration_9a8cde31-7054-4edd-83ce-e4ca96aa25e5"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_configuration_pr_2bc0d1d6-ae12-44e3-8c77-fc3582bd5d24" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.products_tags_db664fa9-92e7-4f58-82d8-fa86920479f8"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Products Tags</field>
+    <field name="parent_id" ref="studio_customization.sky_configuration_9a8cde31-7054-4edd-83ce-e4ca96aa25e5"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_products_0db57243-f921-4d50-bd47-ce5de08051f0" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.products_8f9de478-1059-49a6-9e5a-9258c02934db"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Products</field>
+    <field name="parent_id" ref="studio_customization.sky_3781dfb6-55c5-4317-8a7c-019a2531d1f9"/>
+    <field name="sequence">1</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_project_356b2af4-fdb9-48a9-b3f1-e19a59950f8b" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" eval="False"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Sky_Project</field>
+    <field name="parent_id" eval="False"/>
+    <field name="sequence">10</field>
+    <field name="web_icon">fa fa-rocket,#EB5A46,#636DA9</field>
+  </record>
+  <record id="studio_customization.sky_project_item_86c2ec16-6595-4810-9ff1-de44930bc86a" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.item_f8728046-97ef-4ee3-b45d-eed32211afb7"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Item</field>
+    <field name="parent_id" ref="studio_customization.sky_project_356b2af4-fdb9-48a9-b3f1-e19a59950f8b"/>
+    <field name="sequence">11</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_project_projects_f6ff9c81-133c-4e6f-8364-13996e650501" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.projectsky_8f5d049f-4d61-4f5a-96ae-4b69178a83f1"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">ProjectSky</field>
+    <field name="parent_id" ref="studio_customization.sky_project_356b2af4-fdb9-48a9-b3f1-e19a59950f8b"/>
+    <field name="sequence">10</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_project_vendors_eddd757d-9a07-4e55-8a0f-b714ea9681f3" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.vendors_ace52dc6-8331-4216-9b69-8fe0edf32051"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Vendors</field>
+    <field name="parent_id" ref="studio_customization.sky_project_356b2af4-fdb9-48a9-b3f1-e19a59950f8b"/>
+    <field name="sequence">12</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+  <record id="studio_customization.sky_reservations_d5150124-eeae-409f-ac1b-13094565720c" model="ir.ui.menu" context="{'studio': True}">
+    <field name="action" ref="studio_customization.reservations_fe0e00af-cdcf-4681-b36f-685e26f7b8a5"/>
+    <field name="active" eval="True"/>
+    <field name="groups_id" eval="[(6, 0, [])]"/>
+    <field name="name">Reservations</field>
+    <field name="parent_id" ref="studio_customization.sky_3781dfb6-55c5-4317-8a7c-019a2531d1f9"/>
+    <field name="sequence">3</field>
+    <field name="web_icon" eval="False"/>
+  </record>
+</odoo>
